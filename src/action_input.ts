@@ -9,7 +9,8 @@ const ActionInputsObject = {
     action_cache_revision: 'string',
     artifact_name: 'string',
     show_emoji_in_packsquash_logs: true,
-    enable_color_in_packsquash_logs: true
+    enable_color_in_packsquash_logs: true,
+    skip_artifact_upload: true,
 };
 
 export type ActionInputIdentifier = keyof typeof ActionInputsObject;

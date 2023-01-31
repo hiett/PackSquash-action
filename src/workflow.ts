@@ -24,6 +24,11 @@ export async function uploadArtifact(workingDirectory: WorkingDirectory) {
         return;
     }
 
+    if (getInputValue('skip_artifact_upload')) {
+        debug('Artifact upload is disabled. Skipping artifact upload');
+        return;
+    }
+
     startGroup('Upload generated ZIP file as artifact');
     const response = await create().uploadArtifact(getInputValue('artifact_name'), [workingDirectory.outputFile], workingDirectory.path);
     endGroup();
