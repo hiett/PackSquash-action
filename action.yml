@@ -184,6 +184,10 @@ inputs:
     description: 'A list of file path glob patterns to always include in the generated ZIP file, even if PackSquash does not recognize such files as assets. These files are copied as-is, but not optimized in any specific way, so this option does not substitute proper PackSquash support for assets used by the game. Please read https://github.com/ComunidadAylas/PackSquash/wiki/Options-files#custom-files for more details about the custom files feature.'
     required: false
     default: ''
+  skip_artifact_upload:
+    description: 'If true, PackSquash will not upload the generated ZIP file to the artifact repository. This is useful if you want to use the generated ZIP file as an input for another PackSquash job, or if you want to upload the ZIP file to a different artifact repository.'
+    required: false
+    default: 'false'
 runs:
   using: 'node16'
   main: 'dist/main/index.js'
